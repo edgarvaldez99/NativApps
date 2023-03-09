@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NativApps</string>
+    <string name="add_report">Add Report</string>
+    <string name="take_picture">Take Photo</string>
+    <string name="create_report_button">Create Report</string>
+    <string name="create_report_image_view">Image of Report</string>
 </resources>
