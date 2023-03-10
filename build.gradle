@@ -5,8 +5,15 @@ buildscript {
         hilt_version = '2.44'
         data_binding_version = "7.4.2"
         lifecycle_version = "1.1.1"
+        nav_version = "2.5.3"
         room_version = "2.5.0"
         rx_version = "3.0.0"
+    }
+    repositories {
+        google()
+    }
+    dependencies {
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
     }
 }
 

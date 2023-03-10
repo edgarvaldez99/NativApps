@@ -4,4 +4,7 @@
     <string name="take_picture">Take Photo</string>
     <string name="create_report_button">Create Report</string>
     <string name="create_report_image_view">Image of Report</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="camera_fragment">Camera</string>
 </resources>

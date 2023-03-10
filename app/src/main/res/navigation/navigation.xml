@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@+id/nav_create_report">
+
+    <fragment
+        android:id="@+id/nav_create_report"
+        android:name="com.example.nativapps.fragments.CreateReportFragment"
+        android:label="@string/camera_fragment"
+        tools:layout="@layout/fragment_create_report" />
+
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="com.example.nativapps.fragments.CameraFragment"
+        android:label="@string/camera_fragment"
+        tools:layout="@layout/fragment_camera" />
+
+</navigation>

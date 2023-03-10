@@ -23,7 +23,7 @@ public class DatabaseModule {
     @Provides
     public AppRoomDatabase provideAppDatabase(@ApplicationContext Context context) {
         return Room.databaseBuilder(context, AppRoomDatabase.class, "nativapps.db")
-                .fallbackToDestructiveMigration().build();
+                .allowMainThreadQueries().fallbackToDestructiveMigration().build();
     }
 
     @Provides
