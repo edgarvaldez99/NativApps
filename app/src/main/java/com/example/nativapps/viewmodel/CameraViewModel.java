@@ -14,16 +14,16 @@ import dagger.hilt.android.lifecycle.HiltViewModel;
 @HiltViewModel
 public class CameraViewModel extends ViewModel {
 
-    private final MutableLiveData<Optional<File>> _file = new MutableLiveData<>();
+    private final MutableLiveData<File> _file = new MutableLiveData<>();
 
     @Inject
     CameraViewModel() {}
 
     public void setImage(File image) {
-        _file.setValue(Optional.of(image));
+        _file.setValue(image);
     }
 
-    public LiveData<Optional<File>> getImage() {
+    public LiveData<File> getImage() {
         return _file;
     }
 }

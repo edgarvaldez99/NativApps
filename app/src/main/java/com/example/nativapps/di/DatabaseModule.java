@@ -22,7 +22,8 @@ public class DatabaseModule {
     @Singleton
     @Provides
     public AppRoomDatabase provideAppDatabase(@ApplicationContext Context context) {
-        return Room.databaseBuilder(context, AppRoomDatabase.class, "nativapps").build();
+        return Room.databaseBuilder(context, AppRoomDatabase.class, "nativapps.db")
+                .fallbackToDestructiveMigration().build();
     }
 
     @Provides

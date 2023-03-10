@@ -13,7 +13,6 @@ import com.example.nativapps.viewmodel.CameraViewModel;
 import com.example.nativapps.viewmodel.CreateReportViewModel;
 
 import java.io.File;
-import java.util.Optional;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -21,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class CreateReportActivity extends AppCompatActivity {
 
     private ActivityCreateReportBinding binding;
-    private Optional<File> image = Optional.empty();
+    private File image = null;
     private CreateReportViewModel createReportViewModel;
 
     @Override
@@ -32,9 +31,9 @@ public class CreateReportActivity extends AppCompatActivity {
         createReportViewModel = new ViewModelProvider(this).get(CreateReportViewModel.class);
         CameraViewModel cameraViewModel = new ViewModelProvider(this).get(CameraViewModel.class);
         cameraViewModel.getImage().observe(this, (image) -> {
-            if (image.isPresent()) {
+            if (image != null) {
                 this.image = image;
-                Bitmap bitmap = BitmapFactory.decodeFile(image.get().getAbsolutePath());
+                Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath());
                 binding.imageView.setImageBitmap(bitmap);
                 binding.createReportButton.setEnabled(true);
             }
@@ -50,10 +49,9 @@ public class CreateReportActivity extends AppCompatActivity {
     }
 
     private void createReport() {
-        if (image.isPresent()) {
-            File img = image.get();
+        if (image != null) {
             String description = binding.descriptionEditText.getText().toString();
-            createReportViewModel.insert(description, img);
+            createReportViewModel.insert(description, image);
             finish();
         }
     }
